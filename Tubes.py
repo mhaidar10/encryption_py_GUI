@@ -15,7 +15,6 @@ namaFile = ''
 keyNotReady = True
 fnama=False
 
-# we don't want a full GUI, so keep the root window from appearing
 class app:
     def __init__(self):
         self.filename=None
@@ -65,7 +64,7 @@ class app:
 
         elif self.filename==None:
             messagebox.showerror('Error','please Select File')
-class encrypt(app):#diganti
+class encrypt(app):
     def __init__(self):
         super().__init__()
         self.filename = namaFile
