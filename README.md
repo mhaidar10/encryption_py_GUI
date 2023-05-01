@@ -1,5 +1,8 @@
-# encription_py_GUI
-python mini project
-file encryption
+# Python Encryption Program
+
+- python program for encrypt file
+- using gui for visualize 
+- using 128-bit AES key 
+
 
 
