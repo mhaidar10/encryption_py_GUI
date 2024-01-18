@@ -105,7 +105,7 @@ namaFile=None
 dec_key=None
 not_succes=True
 
-class decrypt(app):#diganti
+class decrypt(app):
     def __init__(self):
         super().__init__()
 
@@ -143,8 +143,8 @@ class decrypt(app):#diganti
             messagebox.showerror('Error','please Select File')
         
 app=app()   
-enc=encrypt()#diganti
-dec=decrypt()#diganti
+enc=encrypt()
+dec=decrypt()
 
 Label(screen,text='Select File',font='impack 10').place(x=10,y=10)
 btnFile = Button(screen,text='SELECT FILE',bg='#1089ff',height=2,width=50,fg='#ffffff',command=app.fpath)
@@ -161,10 +161,10 @@ code=StringVar()
 Entry(textvariable=code).place(x=10,y=200,width=360,height=60)
 
 
-btnEncrypted = Button(screen,text='ENCRYPTED',bg='#ed3833',height=2,width=23,fg='#ffffff',command=enc.encrypted)#diganti
+btnEncrypted = Button(screen,text='ENCRYPTED',bg='#ed3833',height=2,width=23,fg='#ffffff',command=enc.encrypted)
 btnEncrypted.place(x=10,y=250)
 
-btnDecrypted = Button(screen,text='DECRYPTED',bg='#00bd56',height=2, width=23,fg='#ffffff',command=dec.decrypted)#diganti
+btnDecrypted = Button(screen,text='DECRYPTED',bg='#00bd56',height=2, width=23,fg='#ffffff',command=dec.decrypted)
 btnDecrypted.place(x=200,y=250)
 
 
