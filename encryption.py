@@ -3,8 +3,9 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter.filedialog import askopenfilename
 from tkinter.font import families
-#import tkinter.messagebox
-from cryptography.fernet import Fernet
+import base64
+import cryptography 
+from cryptography.fernet import Fernet,InvalidToken  
 
 
 screen =Tk()
@@ -119,24 +120,31 @@ class decrypt(app):
                 key = filekey.read() """
                 
             # using the key
-            fernet = Fernet(dec_key)
+            try:
 
-            
-            # opening the encrypted file
-            with open(namaFile, 'rb') as enc_file:
-                encrypted = enc_file.read()
-            
-            
+                fernet = Fernet(dec_key)
 
-            # decrypting the file
-            decrypted = fernet.decrypt(encrypted)
+                
+                # opening the encrypted file
+                with open(namaFile, 'rb') as enc_file:
+                    encrypted = enc_file.read()
+                
+                
 
-            # opening the file in write mode and
-            # writing the decrypted data
-            with open(namaFile, 'wb') as dec_file:
-                dec_file.write(decrypted)
-            
-            tkinter.messagebox.showinfo("Create By \U0001F49A Developer","file is decrypted")
+                # decrypting the file
+                decrypted = fernet.decrypt(encrypted)
+
+                # opening the file in write mode and
+                # writing the decrypted data
+                with open(namaFile, 'wb') as dec_file:
+                    dec_file.write(decrypted)
+                
+                tkinter.messagebox.showinfo("Create By \U0001F49A Developer","file is decrypted")
+                code.set('')
+                
+            except (ValueError, base64.binascii.Error, InvalidToken):
+                #tkinter.messagebox.showerror('Error', 'Invalid Key Format')
+                tkinter.messagebox.showerror('Error', 'Invalid Key Format or Decryption Failed')
 
 
         elif fnama==False:
