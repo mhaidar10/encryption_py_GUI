@@ -29,7 +29,7 @@ This application provides a graphical user interface for encrypting and decrypti
 ## Usage
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/encryption_py_GUI.git
+    https://github.com/mhaidar10/encryption_py_GUI.git
     ```
 
 3. **Run the Application:**
